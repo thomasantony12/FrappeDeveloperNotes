@@ -4,7 +4,6 @@
 
 1. [Override Standard Reports in Installed Apps](#1-override-standard-reports-in-installed-apps)
 2. [Generating Clickable Links in Frappe](#2-generating-clickable-links-in-frappe)
-- [License](#license)
 
 ### 1. Override Standard Reports in Installed Apps
 
