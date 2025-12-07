@@ -6,6 +6,7 @@
 2. [Generating Clickable Links in Frappe](#2-generating-clickable-links-in-frappe)
 3. [Setting Default Values When Creating a New Document from a Link Field](#3-setting-default-values-when-creating-a-new-document-from-a-link-field)
 
+
 ### 1. Override Standard Reports in Installed Apps
 
 You can override standard reports from other installed apps directly through your custom app.
@@ -41,6 +42,7 @@ report_override_html = {
 }
 ```
 
+
 ### 2. Generating Clickable Links in Frappe
 
 To generate a clickable link string pointing to any document in Frappe, you can use either of the following functions:
@@ -50,6 +52,7 @@ frappe.get_desk_link("Customer", customer.name)
 ```
 
 Both functions return a formatted, clickable link string that can be used.
+
 
 ### 3. Setting Default Values When Creating a New Document from a Link Field
 
