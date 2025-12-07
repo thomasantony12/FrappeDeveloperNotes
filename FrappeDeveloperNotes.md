@@ -4,6 +4,7 @@
 
 1. [Override Standard Reports in Installed Apps](#1-override-standard-reports-in-installed-apps)
 2. [Generating Clickable Links in Frappe](#2-generating-clickable-links-in-frappe)
+3. [Setting Default Values When Creating a New Document from a Link Field](#3-setting-default-values-when-creating-a-new-document-from-a-link-field)
 
 ### 1. Override Standard Reports in Installed Apps
 
@@ -49,3 +50,22 @@ frappe.get_desk_link("Customer", customer.name)
 ```
 
 Both functions return a formatted, clickable link string that can be used.
+
+### 3. Setting Default Values When Creating a New Document from a Link Field
+
+When a user clicks “Create New” from a Link field, Frappe allows you to pre-fill fields in the new document by using:
+```javascript
+var df = frappe.meta.get_docfield("Opportunity Item", "item_code", frm.doc.name);
+// OR: var df = frm.get_docfield("items", "item_code");
+// OR: var df = frm.get_docfield("item_code");
+df.get_route_options_for_new_doc = function (field) {
+	return {
+		is_sales_item: 1,
+		customer_items: [{
+			customer_name: frm.doc.customer_name,
+			customer_group: frm.doc.customer_group,
+		}]
+	}
+}
+```
+
